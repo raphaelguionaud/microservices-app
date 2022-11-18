@@ -9,6 +9,10 @@ This assumes you have Docker, Kubernetes and Skaffold already installed.
 ```
 127.0.0.1 posts.com
 ```
+Your hosts file should look something like this:
+
+<img width="696" alt="Screenshot 2022-11-18 at 15 41 59" src="https://user-images.githubusercontent.com/95441674/202743838-32ce6288-b24f-4fe9-b1ab-c66101317089.png">
+
 2. Clone the repository
 ```
 cd microservices-app/ && skaffold dev
