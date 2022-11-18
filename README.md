@@ -7,3 +7,7 @@ This assumes you have Docker, Kubernetes and Skaffold already installed => Clone
 ```
 cd microservices-app/ && skaffold dev
 ```
+
+The app has a placeholder frontend built in React that can be accessed at [http://posts.com](http://posts.com). This serves as a way for the user to interact with the backend and is not meant to be a fully fleshed out frontend.
+
+From here any changes made will be hot reloaded.
