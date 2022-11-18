@@ -1,0 +1,60 @@
+apiVersion: skaffold/v3
+kind: Config
+build:
+  local:
+    concurrency: 1
+    push: false
+  artifacts:
+    - image: raphaelguionaud/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: 'src/**/*.js'
+    - image: raphaelguionaud/comments
+      context: comments
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
+    - image: raphaelguionaud/event-bus
+      context: event-bus
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
+    - image: raphaelguionaud/moderation
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
+    - image: raphaelguionaud/posts
+      context: posts
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
+    - image: raphaelguionaud/query
+      context: query
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - dest: .
+            src: '*.js'
+manifests:
+  rawYaml:
+    - ./infra/k8s/*
+deploy:
+  kubectl: {}
