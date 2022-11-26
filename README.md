@@ -1,6 +1,17 @@
 # microservices-app
-Small app with microservice architecture deployed in a Kubernetes cluster, Skaffold dev environment. There is a basic placeholder frontend built in React to allow you to interact with the backend.
-The emphasis for this project is on the backend architecture as well as the infrastructure/dev environment setup with Kubernetes and Skaffold allowing for fast and easy build & deployment.
+Small app with NodeJS microservices and a basic placeholder frontend built in React to allow you to interact with the backend.
+The emphasis for this project is on the backend architecture which is event-driven, as well as the infrastructure/dev environment setup with Kubernetes and Skaffold allowing for fast and easy development & deployment.
+
+Tools used:
+* NodeJS
+* Express
+* React
+* Axios
+* Nodemon
+* NGINX Ingress
+* Docker
+* Kubernetes
+* Skaffold
 
 ## Quick start
 This assumes you have Docker, Kubernetes and Skaffold already installed.
@@ -15,6 +26,7 @@ NOTE: This may require you to use administrator privileges. Your hosts file shou
 
 2. Clone the repository
 ```
+git clone ...
 cd microservices-app/ && skaffold dev
 ```
 
@@ -23,3 +35,16 @@ The app has a placeholder frontend built in React that can be accessed at [http:
 From here any changes made will be hot reloaded.
 
 ## App overview
+```
+└── microservices-app
+    ├── client <--dummy react frontend
+    ├── comments <-- handles comment creation
+    ├── event-bus <-- handles passing events to all services
+    ├── infra <-- k8s config files
+    ├── moderation <-- handles comment moderation
+    ├── posts <-- handles post creation
+    ├── query <-- handles GET requests for posts/comments
+    └── skaffold.yaml <-- skaffold config
+```
+
+## Architecture
