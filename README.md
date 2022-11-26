@@ -38,7 +38,7 @@ The app has a placeholder frontend built in React that can be accessed at [http:
 
 From here any changes made will be hot reloaded.
 
-## App overview
+## Files overview
 ```
 └── microservices-app
     ├── client <--dummy react frontend
@@ -50,5 +50,7 @@ From here any changes made will be hot reloaded.
     ├── query <-- handles GET requests for posts/comments
     └── skaffold.yaml <-- skaffold config
 ```
+Each service has a Dockerfile located in its root directory, and a k8s deployment config file in infra/k8s/, including the client.
 
 ## Architecture
+![Capture](https://user-images.githubusercontent.com/95441674/204098891-7d633555-aec8-4c80-9eab-902c8e7750ae.PNG)
