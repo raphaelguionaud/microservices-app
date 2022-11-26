@@ -26,11 +26,15 @@ NOTE: This may require you to use administrator privileges. Your hosts file shou
 
 2. Clone the repository
 ```
-git clone ...
+git clone git@github.com:raphaelguionaud/microservices-app.git
+```
+
+3. Run the app using Skaffold (make sure Docker daemon is running first)
+```
 cd microservices-app/ && skaffold dev
 ```
 
-The app has a placeholder frontend built in React that can be accessed at [http://posts.com](http://posts.com). This is not a real url, just rerouting to the NGINX Ingress service which is exposing itself at 127.0.0.1. This serves as a way for the user to interact with the backend and is not meant to be a fully fleshed out frontend.
+The app has a placeholder frontend built in React that can be accessed at [http://posts.com](http://posts.com). This is not a real url, just rerouting to the NGINX Ingress controller. The frontend serves as a way for the user to interact with the backend and is not meant to be production-ready.
 
 From here any changes made will be hot reloaded.
 
